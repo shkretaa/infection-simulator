@@ -3,6 +3,7 @@
 void setup() {
   size(1000, 700);
   background(25, 20, 35); 
+}
 // Dark purple background}
 
 void draw() {
