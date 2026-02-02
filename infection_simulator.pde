@@ -1,4 +1,3 @@
-// Main File: infection_simulator.pde
  
  int POPULATION_SIZE = 100;
 Population population;
