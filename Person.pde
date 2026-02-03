@@ -17,11 +17,11 @@ class Person {
     state = INFECTED;
   }
   
-  void makeImmune() {
-  if (state == HEALTHY) {
-    state = IMMUNE;
+  void makeImmune(boolean byVaccine) {
+    if (state == HEALTHY) {
+      state = IMMUNE;
+    }
   }
-}
 
 boolean isImmune() { 
   return state == IMMUNE; 
@@ -42,7 +42,15 @@ boolean isImmune() {
     else fill(80, 255, 150); // Green (Immune)
     
     ellipse(pos.x, pos.y, size, size);
+    // pulse animation
+    if (state == INFECTED) {
+      noFill();
+      stroke(220, 70, 70, 100);
+      float pulse = size + sin(frameCount * 0.1) * 5;
+      ellipse(pos.x, pos.y, pulse, pulse);
+    }
   }
+  
   
   boolean isHealthy() { return state == HEALTHY; }
   boolean isInfected() { return state == INFECTED; }
